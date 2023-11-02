@@ -9,7 +9,7 @@
 [cmp-source](https://github.com/hrsh7th/nvim-cmp) for yank history (clipboard
 history) from [yanky.nvim](https://github.com/gbprod/yanky.nvim).
 
-<img src="https://github.com/chrisgrieser/cmp_yanky/assets/73286100/9bc6ae22-6483-4972-838a-8bc1ccc4c138" alt="demo image showcasing suggestions" width=50%>
+<img src="https://github.com/chrisgrieser/cmp_yanky/assets/73286100/9bc6ae22-6483-4972-838a-8bc1ccc4c138" alt="demo image showcasing suggestions" width=70%>
 
 ## Usage
 
@@ -35,7 +35,7 @@ filetype. (`yanky` remembers in which filetype you have yanked something.)
 }
 ```
 
-The number of possible items to be suggested also depends on the size of the
+The number of possible items to be suggested depends on the size of the
 history. You can change the history size with `yanky`'s [ring.history_length
 option](https://github.com/gbprod/yanky.nvim#ringhistory_length).
 
