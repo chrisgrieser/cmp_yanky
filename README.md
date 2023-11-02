@@ -9,7 +9,7 @@
 [cmp-source](https://github.com/hrsh7th/nvim-cmp) for yank history (clipboard
 history) from [yanky.nvim](https://github.com/gbprod/yanky.nvim).
 
-<img src="https://github.com/chrisgrieser/cmp_yanky/assets/73286100/9bc6ae22-6483-4972-838a-8bc1ccc4c138" alt="demo image showcasing suggestions" width=70%>
+<img src="https://github.com/chrisgrieser/cmp_yanky/assets/73286100/e1e62358-63d0-4261-88ed-47bb155576d2" alt="demo image showcasing suggestion" width=70%>
 
 ## Usage
 
