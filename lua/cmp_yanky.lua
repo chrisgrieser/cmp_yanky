@@ -12,7 +12,18 @@ function M:complete(request, callback)
 	if request.option.onlyCurrentFiletype then
 		history = vim.tbl_filter(function(item) return item.filetype == vim.bo.ft end, history)
 	end
-	history = vim.tbl_map(function(item) return { label = item.regcontents, dup = 0 } end, history)
+	history = vim.tbl_map(
+		function(item)
+			local maxLength = 30
+			local label = #item.regcontents > maxLength and item.regcontents:sub(1, maxLength) .. "…" or item.regcontents
+			return {
+				label = label,
+				documentation = { kind = "plaintext", value = item.regcontents },
+				insertText = item.regcontents,
+			}
+		end,
+		history
+	)
 	callback { items = history }
 end
 
