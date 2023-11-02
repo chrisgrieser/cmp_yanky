@@ -13,7 +13,7 @@ function M:complete(request, callback)
 		history = vim.tbl_filter(function(item) return item.filetype == currentFt end, history)
 	end
 
-	local seenItems = {} 
+	local seenItems = {}
 
 	history = vim.tbl_map(function(item)
 		-- avoid duplicated items showing up
