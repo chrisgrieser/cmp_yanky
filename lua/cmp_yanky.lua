@@ -7,11 +7,13 @@ function M.new() return setmetatable({}, { __index = M }) end
 
 function M:get_keyword_pattern() return ".*" end
 
-function M:complete(_, callback)
+function M:complete(request, callback)
 	local history = require("yanky.history").all()
-	local historyOfFt = vim.tbl_filter(function(item) return item.filetype == vim.bo.ft end, history)
-	local historyStrings = vim.tbl_map(function(item) return item.regcontents end, historyOfFt)
-	callback { items = historyStrings }
+	if request.option.onlyCurrentFiletype then
+		history = vim.tbl_filter(function(item) return item.filetype == vim.bo.ft end, history)
+	end
+	history = vim.tbl_map(function(item) return { label = item.regcontents, dup = 0 } end, history)
+	callback { items = history }
 end
 
 return M
