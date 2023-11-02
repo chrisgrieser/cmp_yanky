@@ -1,12 +1,12 @@
 <!-- LTeX: enabled=false -->
-# {{plugin-name}}
+# cmp_yanky
 <!-- LTeX: enabled=true -->
 <!-- TODO uncomment shields when available in dotfyle.com 
-<a href="https://dotfyle.com/plugins/chrisgrieser/{{plugin-name}}">
-<img src="https://dotfyle.com/plugins/chrisgrieser/{{plugin-name}}/shield" /></a>
+<a href="https://dotfyle.com/plugins/chrisgrieser/cmp_yanky">
+<img src="https://dotfyle.com/plugins/chrisgrieser/cmp_yanky/shield" /></a>
 -->
 
-{{plugin-desc}}
+cmp-source for clipboard history from yanky.nvim
 
 <!-- toc -->
 
@@ -26,12 +26,12 @@
 ```lua
 -- lazy.nvim
 {
-	"chrisgrieser/{{plugin-name}}",
+	"chrisgrieser/cmp_yanky",
 },
 
 -- packer
 use {
-	"chrisgrieser/{{plugin-name}}",
+	"chrisgrieser/cmp_yanky",
 }
 ```
 
@@ -39,7 +39,7 @@ use {
 
 ```lua
 -- default settings
-require("{{plugin-name}}").setup {}
+require("cmp_yanky").setup {}
 ```
 
 ## Limitations

@@ -12,7 +12,7 @@ jobs:
       - name: panvimdoc
         uses: kdheepak/panvimdoc@main
         with:
-          vimdoc: {{plugin-name-short}}
+          vimdoc: cmp_yanky
           toc: true
           demojify: true
           treesitter: true
