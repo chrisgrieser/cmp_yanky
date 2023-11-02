@@ -26,10 +26,11 @@ function M:complete(request, callback)
 		if #label > labelMaxLen then label = label:sub(1, labelMaxLen) .. "…" end
 
 		-- syntax highlighting of full content in the documentation window
+		local ft = item.filetype and item.filetype or ""
 		local docs = {
 			kind = "markdown",
 			value = table.concat({
-				"```" .. item.filetype,
+				"```" .. ft,
 				item.regcontents,
 				"```",
 			}, "\n"),
