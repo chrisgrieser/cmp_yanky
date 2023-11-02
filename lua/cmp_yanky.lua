@@ -22,7 +22,7 @@ function M:complete(request, callback)
 
 		-- shorten completion text to display
 		local labelMaxLen = 30
-		local label = item.regcontents
+		local label = vim.trim(item.regcontents)
 		if #label > labelMaxLen then label = label:sub(1, labelMaxLen) .. "…" end
 
 		-- syntax highlighting of full content in the documentation window
