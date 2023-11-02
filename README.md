@@ -6,44 +6,36 @@
 <img src="https://dotfyle.com/plugins/chrisgrieser/cmp_yanky/shield" /></a>
 -->
 
-cmp-source for clipboard history from yanky.nvim
+[cmp-source](https://github.com/hrsh7th/nvim-cmp) for yank history (clipboard
+history) from [yanky.nvim](https://github.com/gbprod/yanky.nvim).
 
-<!-- toc -->
-
-- [Features](#features)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Limitations](#limitations)
-- [Credits](#credits)
-
-<!-- tocstop -->
-
-## Features
--
-
-## Installation
+## Usage
 
 ```lua
--- lazy.nvim
-{
-	"chrisgrieser/cmp_yanky",
-},
-
--- packer
-use {
-	"chrisgrieser/cmp_yanky",
+require("cmp").setup {
+  sources = {
+    { name = "cmp_yanky" }
+  }
 }
 ```
 
-## Configuration
+## Options
+
+The `onlyCurrentFiletype` option filters the yank history based on the current
+filetype. (`yanky` remembers in which filetype you have yanked something.)
 
 ```lua
--- default settings
-require("cmp_yanky").setup {}
+{
+	name = "cmp_yanky",
+	option = {
+		onlyCurrentFiletype = true, -- default: false
+	},
+}
 ```
 
-## Limitations
-- 
+The number of possible items to be suggested also depends on the size of the
+history. You can change the history size with `yanky`'s [ring.history_length
+option](https://github.com/gbprod/yanky.nvim#ringhistory_length).
 
 ## Credits
 <!-- vale Google.FirstPerson = NO -->
@@ -64,11 +56,3 @@ __Profiles__
 - [Mastodon](https://pkm.social/@pseudometa)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
-
-<a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img
-	height='36'
-	style='border:0px;height:36px;'
-	src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3'
-	border='0'
-	alt='Buy Me a Coffee at ko-fi.com'
-/></a>
