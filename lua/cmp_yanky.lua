@@ -30,15 +30,16 @@ function M:complete(request, callback)
 			kind = "markdown",
 			value = table.concat({
 				"```" .. item.filetype,
-				item.regcontents,
+				vim.trim(item.regcontents),
 				"```",
 			}, "\n"),
 		}
 
 		return {
-			label = label,
+			label = label, -- text displayed
 			documentation = docs,
-			insertText = item.regcontents,
+			insertText = item.regcontents, -- text inserted
+			filterText = item.regcontents, -- text matched
 		}
 	end, history)
 	callback { items = history }
