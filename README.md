@@ -23,14 +23,15 @@ require("cmp").setup {
 
 ## Options
 
-The `onlyCurrentFiletype` option filters the yank history based on the current
-filetype. (`yanky` remembers in which filetype you have yanked something.)
-
 ```lua
+-- default values
 {
 	name = "cmp_yanky",
 	option = {
-		onlyCurrentFiletype = true, -- default: false
+		-- only suggest items which match the current filetype
+		onlyCurrentFiletype = false,
+		-- only suggest items with a minimum length
+		minLength = 3,
 	},
 }
 ```

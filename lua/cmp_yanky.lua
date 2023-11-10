@@ -18,7 +18,13 @@ function M:complete(request, callback)
 		history = vim.tbl_filter(function(item) return item.filetype == currentFt end, history)
 	end
 
-	local seenItems = {} 
+	local minLength = request.option.minLength or 3
+	history = vim.tbl_filter(
+		function(item) return #vim.trim(item.regcontents) >= minLength end,
+		history
+	)
+
+	local seenItems = {}
 
 	history = vim.tbl_map(function(item)
 		local ft = item.filetype or ""
