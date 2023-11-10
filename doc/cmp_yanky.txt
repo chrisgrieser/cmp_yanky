@@ -1,4 +1,4 @@
-*cmp_yanky.txt*          For NVIM v0.8.0         Last change: 2023 November 03
+*cmp_yanky.txt*          For NVIM v0.8.0         Last change: 2023 November 10
 
 ==============================================================================
 Table of Contents                                *cmp_yanky-table-of-contents*
@@ -21,23 +21,24 @@ USAGE                                              *cmp_yanky-cmp_yanky-usage*
 
 >lua
     require("cmp").setup {
-      sources = {
-        { name = "cmp_yanky" }
-      }
+        sources = {
+            { name = "cmp_yanky" },
+        },
     }
 <
 
 
 OPTIONS                                          *cmp_yanky-cmp_yanky-options*
 
-The `onlyCurrentFiletype` option filters the yank history based on the current
-filetype. (`yanky` remembers in which filetype you have yanked something.)
-
 >lua
+    -- default values
     {
         name = "cmp_yanky",
         option = {
-            onlyCurrentFiletype = true, -- default: false
+            -- only suggest items which match the current filetype
+            onlyCurrentFiletype = false,
+            -- only suggest items with a minimum length
+            minLength = 3,
         },
     }
 <
