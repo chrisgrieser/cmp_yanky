@@ -16,6 +16,7 @@ function M:complete(request, callback)
 	local seenItems = {} 
 
 	history = vim.tbl_map(function(item)
+		local ft = item.filetype or ""
 		-- avoid duplicated items showing up
 		if seenItems[item.regcontents] then return end
 		seenItems[item.regcontents] = true
@@ -29,7 +30,7 @@ function M:complete(request, callback)
 		local docs = {
 			kind = "markdown",
 			value = table.concat({
-				"```" .. item.filetype,
+				"```" .. ft,
 				vim.trim(item.regcontents),
 				"```",
 			}, "\n"),
