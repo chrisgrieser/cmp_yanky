@@ -6,10 +6,15 @@ local M = {}
 function M.new() return setmetatable({}, { __index = M }) end
 
 function M:complete(request, callback)
+	local defaultOpts = {
+		onlyCurrentFiletype = false,
+	}
+	local opts = vim.tbl_deep_extend("force", defaultOpts, request.option or {})
+
 	local history = require("yanky.history").all()
 	local currentFt = vim.api.nvim_buf_get_option(0, "filetype")
 
-	if request.option.onlyCurrentFiletype then
+	if opts.currentFiletype then
 		history = vim.tbl_filter(function(item) return item.filetype == currentFt end, history)
 	end
 
