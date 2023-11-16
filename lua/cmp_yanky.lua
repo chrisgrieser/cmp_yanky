@@ -20,7 +20,10 @@ function M:complete(request, callback)
 
 	local minLength = request.option.minLength or 3
 	history = vim.tbl_filter(
-		function(item) return #vim.trim(item.regcontents) >= minLength end,
+		function(item)
+			if not item.regcontents then return false end
+			return #vim.trim(item.regcontents) >= minLength
+		end,
 		history
 	)
 
