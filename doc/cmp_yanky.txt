@@ -1,4 +1,4 @@
-*cmp_yanky.txt*          For NVIM v0.8.0         Last change: 2023 November 16
+*cmp_yanky.txt*         For NVIM v0.8.0         Last change: 2024 September 14
 
 ==============================================================================
 Table of Contents                                *cmp_yanky-table-of-contents*
