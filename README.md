@@ -7,12 +7,28 @@ history) from [yanky.nvim](https://github.com/gbprod/yanky.nvim).
 
 <img alt="demo image showcasing suggestion" width="70%" src="https://github.com/chrisgrieser/cmp_yanky/assets/73286100/e1e62358-63d0-4261-88ed-47bb155576d2">
 
-## Usage
+## Installation
+
+```lua
+-- lazy.nvim
+{
+	"hrsh7th/nvim-cmp",
+	dependencies = {
+		-- ... other cmp plugins
+		"chrisgrieser/cmp_yanky",
+	}
+},
+```
 
 ```lua
 require("cmp").setup {
 	sources = {
-		{ name = "cmp_yanky" },
+		{ 
+			name = "cmp_yanky"
+			option = {
+				-- see below
+			}
+		},
 	},
 }
 ```
