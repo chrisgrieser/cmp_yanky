@@ -1,4 +1,4 @@
-*cmp_yanky.txt*         For NVIM v0.8.0         Last change: 2024 September 22
+*cmp_yanky.txt*          For NVIM v0.8.0          Last change: 2024 October 05
 
 ==============================================================================
 Table of Contents                                *cmp_yanky-table-of-contents*
@@ -34,7 +34,7 @@ INSTALLATION                                *cmp_yanky-cmp_yanky-installation*
     require("cmp").setup {
         sources = {
             { 
-                name = "cmp_yanky"
+                name = "cmp_yanky",
                 option = {
                     -- see below
                 }
