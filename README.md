@@ -24,7 +24,7 @@ history) from [yanky.nvim](https://github.com/gbprod/yanky.nvim).
 require("cmp").setup {
 	sources = {
 		{ 
-			name = "cmp_yanky"
+			name = "cmp_yanky",
 			option = {
 				-- see below
 			}
